@@ -1,0 +1,35 @@
+version: '2'
+services:
+  redis:
+    image: docker.io/bitnami/redis:6.2
+    container_name: redis
+    hostname: redis
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - REDIS_DISABLE_COMMANDS=FLUSHDB
+    ports:
+      - '6379:6379'
+    volumes:
+      - 'redis_data:/bitnami/redis/data'
+  node:
+    image: mynodeapp:0.0.1
+    container_name: nodeapp
+    hostname: nodeapp
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=dev
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    # volumes:
+    #   - ./:/home/node/app
+    ports:
+      - '8001:8001'
+    command: >
+      node sample.js
+    depends_on:
+      - redis
+    links:
+      - redis
+volumes:
+  redis_data:
+    driver: local

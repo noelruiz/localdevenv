@@ -1,0 +1,27 @@
+{
+  "name": "sample",
+  "version": "0.1.0",
+  "description": "redis sample api project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noelruiz/localdevenv.git"
+  },
+  "author": "Noel Ruiz",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/noelruiz/localdevenv/issues"
+  },
+  "homepage": "https://github.com/noelruiz/localdevenv#readme",
+  "dependencies": {
+    "axios": "^0.26.0",
+    "crypto": "^1.0.1",
+    "express": "^4.17.3",
+    "math": "^0.0.3",
+    "redis": "^4.0.4",
+    "util": "^0.12.4"
+  }
+}
