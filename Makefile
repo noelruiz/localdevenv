@@ -7,4 +7,7 @@ run:
 stop:
 	@docker-compose stop
 
+magic: build \
+	run
+
 PHONY: build run stop
